@@ -374,6 +374,82 @@
     transform:scale(1.08);
   }
 
+
+  /* Carrossel premium de tecnologias */
+  .logo-carousel{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    padding:8px 0 14px;
+    mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent);
+    -webkit-mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent);
+  }
+  .logo-track{
+    display:flex;
+    width:max-content;
+    animation:logoCarousel 18s linear infinite;
+    will-change:transform;
+  }
+  .logo-group{
+    display:flex;
+    gap:14px;
+    padding-right:14px;
+  }
+  .tech-logo{
+    min-width:190px;
+    flex:0 0 190px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:13px 17px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.07);
+    background:rgba(255,255,255,.025);
+    color:#d4d4d8;
+    filter:none!important;
+    opacity:1!important;
+    transition:transform .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease;
+  }
+  .tech-logo:hover{
+    transform:translateY(-3px) scale(1.02)!important;
+    background:rgba(255,255,255,.06);
+    border-color:rgba(126,217,87,.28);
+    box-shadow:0 12px 34px rgba(0,0,0,.25),0 0 28px rgba(126,217,87,.06);
+  }
+  .logo-img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+    flex:0 0 32px;
+    display:block;
+  }
+  .api-logo{
+    width:32px;
+    height:32px;
+    border-radius:9px;
+    background:rgba(255,255,255,.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9px;
+    font-weight:800;
+    color:#fff;
+    flex:0 0 32px;
+  }
+  .tech-logo span{
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  @keyframes logoCarousel{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+  .logo-carousel:hover .logo-track{animation-play-state:paused}
+  @media (max-width:640px){
+    .tech-logo{min-width:170px;flex-basis:170px;padding:12px 14px}
+  }
+
   .scroll-cue{
     animation:scrollCue 2.1s ease-in-out infinite;
   }
@@ -562,26 +638,58 @@
         <p class="text-[11px] text-zinc-600">Marcas e logotipos de terceiros pertencem aos seus respectivos proprietários.</p>
       </div>
 
-      <div class="flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none]">
-        <a href="https://openai.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo shrink-0 flex items-center gap-3 px-4 py-3 rounded-xl border border-white/7 bg-white/[.025]" aria-label="OpenAI">
-          <img src="https://cdn.simpleicons.org/openai/ffffff" alt="OpenAI" class="w-8 h-8 object-contain" loading="lazy">
-          <span class="text-sm font-semibold text-zinc-300">OpenAI</span>
-        </a>
-        <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo shrink-0 flex items-center gap-3 px-4 py-3 rounded-xl border border-white/7 bg-white/[.025]" aria-label="Anthropic Claude">
-          <img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Anthropic" class="w-8 h-8 object-contain" loading="lazy">
-          <span class="text-sm font-semibold text-zinc-300">Claude</span>
-        </a>
-        <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo shrink-0 flex items-center gap-3 px-4 py-3 rounded-xl border border-white/7 bg-white/[.025]" aria-label="Google Gemini">
-          <img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Google Gemini" class="w-8 h-8 object-contain" loading="lazy">
-          <span class="text-sm font-semibold text-zinc-300">Gemini</span>
-        </a>
-        <a href="https://x.ai/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo shrink-0 flex items-center gap-3 px-4 py-3 rounded-xl border border-white/7 bg-white/[.025]" aria-label="xAI Grok">
-          <img src="https://cdn.simpleicons.org/x/ffffff" alt="xAI / Grok" class="w-8 h-8 object-contain" loading="lazy">
-          <span class="text-sm font-semibold text-zinc-300">Grok</span>
-        </a>
-        <div class="tech-item tech-logo shrink-0 flex items-center gap-3 px-4 py-3 rounded-xl border border-white/7 bg-white/[.025]">
-          <div class="w-8 h-8 rounded-lg bg-white/8 flex items-center justify-center font-bold text-[9px]">API</div>
-          <span class="text-sm font-semibold text-zinc-300">APIs & integrações</span>
+      <div class="logo-carousel" aria-label="Tecnologias utilizadas">
+        <div class="logo-track">
+          <div class="logo-group">
+            <a href="https://openai.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo" aria-label="OpenAI">
+              <img src="https://www.edigitalagency.com.au/wp-content/uploads/new-ChatGPT-icon-white-png-large-size.png" alt="OpenAI" class="logo-img" loading="eager" onerror="this.style.display='none'">
+              <span>OpenAI</span>
+            </a>
+            <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo" aria-label="Anthropic Claude">
+              <img src="https://cdn.simpleicons.org/claude/D97757" alt="Anthropic Claude" class="logo-img" loading="eager" onerror="this.style.display='none'">
+              <span>Claude</span>
+            </a>
+            <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo" aria-label="Google Gemini">
+              <img src="https://static.vecteezy.com/system/resources/previews/055/687/065/non_2x/gemini-google-icon-symbol-logo-free-png.png" alt="Google Gemini" class="logo-img" loading="eager" onerror="this.style.display='none'">
+              <span>Gemini</span>
+            </a>
+            <a href="https://grok.coms/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo" aria-label="xAI Grok">
+              <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/grok-dark.webp" alt="xAI Grok" class="logo-img" loading="eager" onerror="this.style.display='none'">
+              <span>Grok</span>
+            </a>
+            <div class="tech-item tech-logo" aria-label="APIs e integrações">
+              <img src="https://www.ciscoinvestments.com/hubfs/Portfolio/groq-logo.png"
+                   alt="Groq"
+                   class="logo-img"
+                   loading="eager" onerror="this.style.display='none'">
+              <span>APIs &amp; integrações</span>
+            </div>
+          </div>
+          <div class="logo-group" aria-hidden="true">
+            <a href="https://openai.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo">
+              <img src="https://www.edigitalagency.com.au/wp-content/uploads/new-ChatGPT-icon-white-png-large-size.png" alt="" class="logo-img" onerror="this.style.display='none'">
+              <span>OpenAI</span>
+            </a>
+            <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo">
+              <img src="https://cdn.simpleicons.org/claude/D97757" alt="" class="logo-img" onerror="this.style.display='none'">
+              <span>Claude</span>
+            </a>
+            <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo">
+              <img src="https://static.vecteezy.com/system/resources/previews/055/687/065/non_2x/gemini-google-icon-symbol-logo-free-png.png" alt="" class="logo-img" onerror="this.style.display='none'">
+              <span>Gemini</span>
+            </a>
+            <a href="https://grok.com/" target="_blank" rel="noopener noreferrer" class="tech-item tech-logo">
+              <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/grok-dark.webp" alt="" class="logo-img" onerror="this.style.display='none'">
+              <span>Grok</span>
+            </a>
+            <div class="tech-item tech-logo" aria-hidden="true">
+              <img src="https://www.ciscoinvestments.com/hubfs/Portfolio/groq-logo.png"
+                   alt=""
+                   class="logo-img"
+                   loading="eager" onerror="this.style.display='none'">
+              <span>APIs &amp; integrações</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
